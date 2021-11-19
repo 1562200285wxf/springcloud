@@ -20,6 +20,7 @@
         <module>mq-consumer9110</module>
         <module>springsecurityweb</module>
         <module>spring-gateway</module>
+        <module>spring-acl</module>
     </modules>
 
     <properties>
