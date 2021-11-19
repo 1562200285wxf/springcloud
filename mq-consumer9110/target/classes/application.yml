@@ -1,0 +1,18 @@
+server:
+  port: 9110
+spring:
+  activemq:
+    broker-url: tcp://123.60.218.173:61616
+    user: admin
+    password: admin
+    packages:
+      trust-all: true
+  application:
+    name: consumer9110
+  jms:
+    pub-sub-domain: false  # 点对点模式
+active:
+  queue:
+    name: springboot_queue
+  topic:
+    name: springboot_topic

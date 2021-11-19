@@ -1,0 +1,18 @@
+server:
+  port: 9100
+spring:
+  activemq:
+    broker-url: tcp://123.60.218.173:61616
+    user: admin
+    password: admin
+  application:
+    name: provider9100
+  jms:
+    pub-sub-domain: false  # 点对点模式
+active:
+  queue:
+    name: springboot_queue
+  topic:
+    name: springboot_topic
+  queue-stu:
+    name: com.bh.vo.mq.StudentRequest

@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: nacos-provider9000
+  cloud:
+    nacos:
+      discovery:
+      server-addr: 123.60.218.173:8848
+      namespace: Public
+      group: DEFAULT_GROUP
