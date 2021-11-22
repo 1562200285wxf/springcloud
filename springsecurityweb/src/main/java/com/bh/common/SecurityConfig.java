@@ -51,7 +51,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 // 设置 过期时间 用于记住我 自动登陆
                 .rememberMe()
                 .tokenRepository(persistentTokenRepository)
-                .tokenValiditySeconds(60)
+                .tokenValiditySeconds(6000)
                 .userDetailsService(myUserDetailsService)
                 .and()
                 .csrf().disable();//禁用默认的登陆界面

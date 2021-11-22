@@ -32,7 +32,7 @@ public class Permission implements Serializable {
     @TableId(value = "id", type = IdType.ID_WORKER_STR)
     private String id;
 
-    @ApiModelProperty(value = "所属上级")
+    @ApiModelProperty(value = "父id")
     private String pid;
 
     @ApiModelProperty(value = "名称")

@@ -20,5 +20,19 @@
   <br/>
   <input type="submit"/>
 </form>
+<iframe id="myFrame" src="http://localhost:9100/test1"></iframe>
+
+
+<button class="send_jsonp">jsonp</button>
+<script>
+  $(".send_jsonp").click(function () {
+    $.ajax({
+      url:"http://localhost:9100/test1",
+      success:function (data) {
+        console.log(data)
+      }
+    })
+  })
+</script>
 </body>
 </html>
