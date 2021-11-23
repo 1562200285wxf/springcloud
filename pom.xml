@@ -19,8 +19,9 @@
         <module>mq-provider9100</module>
         <module>mq-consumer9110</module>
         <module>springsecurityweb</module>
-        <module>spring-gateway</module>
-        <module>spring-acl</module>
+        <module>springcloud-gateway</module>
+        <module>springcloud-acl</module>
+        <module>springcloud-common</module>
     </modules>
 
     <properties>
@@ -57,8 +58,45 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
+            <!--lombok用来简化实体类：需要安装lombok插件-->
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>1.18.18</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
+
+    <dependencies>
+        <!-- web -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter</artifactId>
+        </dependency>
+        <!--lombok用来简化实体类：需要安装lombok插件-->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.18</version>
+        </dependency>
+        <!--swagger-->
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger2</artifactId>
+            <version>2.7.0</version>
+        </dependency>
+        <!--swagger ui-->
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger-ui</artifactId>
+            <version>2.7.0</version>
+        </dependency>
+
+    </dependencies>
 
 
 </project>

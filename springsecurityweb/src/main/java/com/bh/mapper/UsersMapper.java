@@ -1,7 +1,7 @@
 package com.bh.mapper;
 
-import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.bh.entity.Users;
+import com.bh.mapper.self.RootMapper;
 import org.springframework.stereotype.Repository;
 
 /**
@@ -10,5 +10,5 @@ import org.springframework.stereotype.Repository;
  * @Description: TODO
  */
 @Repository
-public interface UsersMapper extends BaseMapper<Users> {
+public interface UsersMapper extends RootMapper<Users> {
 }

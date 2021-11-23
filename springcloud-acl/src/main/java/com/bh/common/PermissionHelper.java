@@ -2,8 +2,10 @@ package com.bh.common;
 
 import com.bh.entity.Permission;
 import org.apache.commons.lang3.StringUtils;
+import sun.security.util.BitArray;
 
 import java.util.ArrayList;
+import java.util.BitSet;
 import java.util.List;
 
 /**
@@ -38,7 +40,7 @@ public class PermissionHelper {
      */
     public static Permission findChildren(Permission treeNode, List<Permission> treeNodes) {
         treeNode.setChildren(new ArrayList<Permission>());
-
+        BitSet bitSet = new BitSet();
         for (Permission it : treeNodes) {
             if(StringUtils.equals(treeNode.getId(),it.getPid())){
                 int level = treeNode.getLevel() + 1;
