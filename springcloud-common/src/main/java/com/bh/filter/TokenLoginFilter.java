@@ -45,13 +45,8 @@ public class TokenLoginFilter extends UsernamePasswordAuthenticationFilter {
 
     /**
      * 获取表单提交的相关信息
-     *
-     * @param request
-     * @param response
-     * @return
      * @throws AuthenticationException
-     * @author lixiaolong
-     * @date 2021/1/23 9:50
+     * @author 王孝峰
      */
     @Override
     public Authentication attemptAuthentication(HttpServletRequest request,
@@ -59,11 +54,11 @@ public class TokenLoginFilter extends UsernamePasswordAuthenticationFilter {
         // 获取表单提交数据
         try {
             CurrentUserInfo user = new ObjectMapper().readValue(request.getInputStream(), CurrentUserInfo.class);
-
             return authenticationManager.authenticate(
                     new UsernamePasswordAuthenticationToken(
-                            user.getUsername(), user.getPassword(), new ArrayList<>()));
-
+                            user.getUsername(), user.getPassword(), new ArrayList<>()
+                    )
+            );
         } catch (IOException e) {
             e.printStackTrace();
             throw new RuntimeException();

@@ -11,7 +11,7 @@ import java.util.Collection;
 import java.util.List;
 
 /**
- * @author lixiaolong
+ * @author 王孝峰
  */
 @Data
 public class SecurityUser implements UserDetails {

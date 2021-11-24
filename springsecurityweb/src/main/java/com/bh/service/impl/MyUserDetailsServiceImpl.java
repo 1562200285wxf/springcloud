@@ -1,4 +1,4 @@
-package com.bh.service;
+package com.bh.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.bh.entity.Users;
@@ -22,8 +22,7 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
-@Service("userDetailsService")
-public class MyUserDetailsService implements UserDetailsService {
+public class MyUserDetailsServiceImpl implements UserDetailsService {
     @Resource
     private PasswordEncoder passwordEncoder;
 

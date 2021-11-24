@@ -14,9 +14,9 @@ import java.util.Date;
 @Component
 public class TokenManager {
     //token有效时长 24小时
-    private long tokenEcpiration = 24 * 60 * 60 * 1000;
+    private static long tokenEcpiration = 24 * 60 * 60 * 1000;
     //编码秘钥
-    private String tokenSignKey = "123456";
+    private static String tokenSignKey = "123456";
 
     //1 使用jwt根据用户名生成token
     public String createToken(String username) {
@@ -30,6 +30,12 @@ public class TokenManager {
         return token;
     }
 
+    public static void main(String[] args) {
+        TokenManager tokenManager = new TokenManager();
+        System.out.println(tokenManager.createToken("王孝峰"));
+        System.out.println(tokenManager.getUserInfoFromToken(tokenManager.createToken("王孝峰")));
+    }
+
     //2 根据token字符串得到用户信息
     public String getUserInfoFromToken(String token) {
         return Jwts.parser()
@@ -37,7 +43,7 @@ public class TokenManager {
                 .parseClaimsJws(token).getBody().getSubject();
     }
 
-    //3 删除token
+    //3 删除token---客户端不携带token，
     public void removeToken(String token) {
     }
 }

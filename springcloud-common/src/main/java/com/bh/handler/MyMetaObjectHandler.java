@@ -9,7 +9,7 @@ import java.util.Date;
 /**
  * mybatis 的时间字段处理
  *
- * @author lixiaolong
+ * @author 王孝峰
  */
 @Component
 public class MyMetaObjectHandler implements MetaObjectHandler {

@@ -1,11 +1,11 @@
-package com.bh.common;
+package com.bh.common.config;
 
-import com.bh.service.MyUserDetailsService;
-import org.springframework.context.annotation.Bean;
+import com.bh.service.impl.MyUserDetailsServiceImpl;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.authentication.rememberme.PersistentTokenRepository;
 
@@ -20,7 +20,7 @@ import javax.annotation.Resource;
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Resource
-    MyUserDetailsService myUserDetailsService;
+    UserDetailsService userDetailsService;
 
     @Resource
     PasswordEncoder passwordEncoder;
@@ -30,7 +30,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-        auth.userDetailsService(myUserDetailsService).passwordEncoder(passwordEncoder);
+        auth.userDetailsService(userDetailsService).passwordEncoder(passwordEncoder);
     }
 
     @Override
@@ -41,7 +41,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .defaultSuccessUrl("/user/loginSuccess").permitAll() // 通过登陆界面认证后的默认跳转界面
                 // 哪些路径不需要登陆
                 .and()
-                .authorizeRequests().antMatchers("/", "/user/hello", "/user/login").permitAll()//免登录接口
+                .authorizeRequests().antMatchers("/", "/user/hello", "/user/login", "/test/*").permitAll()//免登录接口
 //               权限和角色都可以在接口注解实现
 //                .antMatchers("/user/admin").hasAuthority("admin")//只有拥有admin权限，才能登陆接口,只有一个参数
 //                .antMatchers("/user/admins").hasAnyAuthority("admin","system")
@@ -52,7 +52,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .rememberMe()
                 .tokenRepository(persistentTokenRepository)
                 .tokenValiditySeconds(6000)
-                .userDetailsService(myUserDetailsService)
+                .userDetailsService(userDetailsService)
                 .and()
                 .csrf().disable();//禁用默认的登陆界面
 

@@ -23,7 +23,7 @@ import javax.annotation.Resource;
  */
 @RestController
 @RequestMapping("/user")
-public class testController {
+public class LoginController {
 
     @Resource
     UsersMapper usersMapper;

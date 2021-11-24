@@ -1,8 +1,11 @@
 package com.bh.mapper;
 
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.bh.entity.Users;
-import com.bh.mapper.self.RootMapper;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
+
+import java.util.List;
 
 /**
  * @Author: wangxiaofeng
@@ -10,5 +13,9 @@ import org.springframework.stereotype.Repository;
  * @Description: TODO
  */
 @Repository
-public interface UsersMapper extends RootMapper<Users> {
+public interface UsersMapper extends BaseMapper<Users> {
+
+    int insertBatch(@Param("list") List<Users> list);
+
+
 }
