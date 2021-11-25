@@ -11,21 +11,21 @@ spring:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://123.60.218.173:3306/mybatis?serverTimezone=GMT%2B8
     username: root
+    password: 1234
   jackson:
     date-format: yyyy-MM-dd HH:mm:ss
     time-zone: GMT+8
-#  redis:
-#    database: 0
-#    host: 127.0.0.1
-#    port: 2020
-#    password: yiguan789
-#    lettuce:
-#      pool:
-#        max-active: 20
-#        max-idle: 5
-#        max-wait: -1
-#        min-idle: 0
-#    timeout: 1800000
+  redis:
+    database: 0
+    host: 127.0.0.1
+    port: 6379
+    lettuce:
+      pool:
+        max-active: 20
+        max-idle: 5
+        max-wait: -1
+        min-idle: 0
+    timeout: 1800000
 
 mybatis-plus:
   configuration:

@@ -54,11 +54,13 @@ public class TokenLoginFilter extends UsernamePasswordAuthenticationFilter {
         // 获取表单提交数据
         try {
             CurrentUserInfo user = new ObjectMapper().readValue(request.getInputStream(), CurrentUserInfo.class);
-            return authenticationManager.authenticate(
+            //会调用userdetail 查数据库
+            Authentication result = authenticationManager.authenticate(
                     new UsernamePasswordAuthenticationToken(
                             user.getUsername(), user.getPassword(), new ArrayList<>()
                     )
             );
+            return result;
         } catch (IOException e) {
             e.printStackTrace();
             throw new RuntimeException();

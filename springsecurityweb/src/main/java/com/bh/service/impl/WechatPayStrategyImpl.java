@@ -1,8 +1,7 @@
 package com.bh.service.impl;
 
-import com.bh.common.emeu.PayEnum;
+import com.bh.acl.common.emeu.PayEnum;
 import com.bh.service.PayStrategy;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 /**
