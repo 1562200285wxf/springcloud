@@ -16,7 +16,7 @@ import javax.sql.DataSource;
  * @Description: TODO
  */
 @Component
-public class WebConfig {
+public class WebMvcConfig {
 
     @Resource
     DataSource dataSource;

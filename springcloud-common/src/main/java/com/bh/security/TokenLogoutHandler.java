@@ -11,7 +11,6 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  * 退出处理器 退出时移除token 并删除redis中的token信息
- *
  */
 public class TokenLogoutHandler implements LogoutHandler {
     private TokenManager tokenManager;

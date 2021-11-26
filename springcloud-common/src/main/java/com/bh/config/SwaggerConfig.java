@@ -37,7 +37,7 @@ public class SwaggerConfig {
                 .title("王孝峰--API文档")
                 .description("王孝峰的安全微服务接口定义")
                 .version("1.0")
-                .contact(new Contact("java", "http://baidu.com", "1123@qq.com"))
+                .contact(new Contact("java", "http://baidu.com", "1562200285@qq.com"))
                 .build();
     }
 }

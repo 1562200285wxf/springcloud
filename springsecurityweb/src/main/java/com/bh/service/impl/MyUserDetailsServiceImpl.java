@@ -34,9 +34,6 @@ public class MyUserDetailsServiceImpl implements UserDetailsService {
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         //调用usersMapper方法，根据用户名查询数据库
-//        LambdaQueryWrapper<Users> wrapper = new LambdaQueryWrapper<>();
-//        wrapper.eq(Users::getUsername, username);
-//        Users users = usersMapper.selectOne(wrapper);
         //数据库没有用户名，认证失败
         if (!usersMap.containsKey(username)) {
             throw new UsernameNotFoundException("用户名不存在！");
@@ -45,9 +42,11 @@ public class MyUserDetailsServiceImpl implements UserDetailsService {
         List<GrantedAuthority> auths =
                 AuthorityUtils.createAuthorityList("admin", "system", "ROLE_manager");
 
-//        return new User(users.getUsername(),users.getPassword(),auths);
         return new User(users.getUsername(), passwordEncoder.encode(users.getPassword()), auths);
     }
+
+
+
 
     @PostConstruct
     public void getAllUser(){

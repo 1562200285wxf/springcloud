@@ -48,7 +48,8 @@ public class TokenWebSecurityConfig extends WebSecurityConfigurerAdapter {
         http.exceptionHandling()
                 //没有权限访问时调用自定义的处理类
                 .authenticationEntryPoint(new UnauthEntryPoint())
-                .and().csrf().disable()
+                .and()
+//                .csrf().disable()
                 .authorizeRequests()
                 .anyRequest().authenticated()
                 //退出路径
@@ -71,6 +72,6 @@ public class TokenWebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     public void configure(WebSecurity web) throws Exception {
-        web.ignoring().antMatchers("/api/**");
+        web.ignoring().antMatchers("/api/**","*");
     }
 }

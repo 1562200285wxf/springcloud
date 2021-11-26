@@ -71,14 +71,6 @@ public class TokenLoginFilter extends UsernamePasswordAuthenticationFilter {
     /**
      * Default behaviour for successful authentication.
      * 认证成功调用的方法 生成token 存入到redis
-     *
-     * @param request
-     * @param response
-     * @param chain
-     * @param authResult the object returned from the <tt>attemptAuthentication</tt>
-     *                   method.
-     * @throws IOException
-     * @throws ServletException
      */
     @Override
     protected void successfulAuthentication(HttpServletRequest request, HttpServletResponse response,
