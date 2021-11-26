@@ -9,21 +9,21 @@ import org.springframework.stereotype.Component;
  */
 @Component
 public class DefaultPasswordEncoder implements PasswordEncoder {
-
-    public DefaultPasswordEncoder() {
-        this(-1);
-    }
-
-    public DefaultPasswordEncoder(int strength) {
-    }
-
-
     /**
      * 进行MD5加密
      */
     @Override
     public String encode(CharSequence rawPassword) {
         return MD5.encrypt(rawPassword.toString());
+    }
+
+    /*
+    * springsecurity新版本增添了密码规则
+    * 生成密码之后-----  前面加上     {密码类型}    比如：{MD5}96e79218965eb72c92a549dd5a330112
+    * */
+    public static void main(String[] args) {
+        DefaultPasswordEncoder defaultPasswordEncoder = new DefaultPasswordEncoder();
+        System.out.println(defaultPasswordEncoder.encode("111111"));
     }
 
     /**

@@ -1,7 +1,7 @@
 package com.bh.filter;
 
-import com.bh.entity.CurrentUserInfo;
-import com.bh.entity.SecurityUser;
+import com.bh.acl.entity.CurrentUserInfo;
+import com.bh.acl.entity.SecurityUser;
 import com.bh.security.TokenManager;
 import com.bh.utils.R;
 import com.bh.utils.ResponseUtil;

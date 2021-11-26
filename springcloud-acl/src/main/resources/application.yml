@@ -26,6 +26,8 @@ spring:
         max-wait: -1
         min-idle: 0
     timeout: 1800000
+  main:
+    allow-bean-definition-overriding: true
 
 mybatis-plus:
   configuration:

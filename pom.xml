@@ -19,7 +19,6 @@
         <module>mq-provider9100</module>
         <module>mq-consumer9110</module>
         <module>springsecurityweb</module>
-        <module>springcloud-gateway</module>
         <module>springcloud-acl</module>
         <module>springcloud-common</module>
     </modules>
