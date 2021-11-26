@@ -1,6 +1,6 @@
 package com.bh.acl.service.impl;
 
-import com.bh.acl.entity.RolePermission;
+import com.bh.entity.RolePermission;
 import com.bh.acl.mapper.RolePermissionMapper;
 import com.bh.acl.service.RolePermissionService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;

@@ -1,4 +1,4 @@
-package com.bh.acl.entity;
+package com.bh.entity;
 
 import com.baomidou.mybatisplus.annotation.*;
 import io.swagger.annotations.ApiModel;

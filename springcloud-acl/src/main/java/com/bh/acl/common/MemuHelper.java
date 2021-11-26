@@ -1,7 +1,7 @@
 package com.bh.acl.common;
 
 import com.alibaba.fastjson.JSONObject;
-import com.bh.acl.entity.Permission;
+import com.bh.entity.Permission;
 import org.springframework.util.StringUtils;
 
 import java.util.ArrayList;

@@ -1,6 +1,6 @@
 package com.bh.acl.service.impl;
 
-import com.bh.acl.entity.User;
+import com.bh.entity.User;
 import com.bh.acl.mapper.UserMapper;
 import com.bh.acl.service.UserService;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;

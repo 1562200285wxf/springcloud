@@ -1,7 +1,7 @@
 package com.bh.acl.service.impl;
 
-import com.bh.acl.entity.Role;
-import com.bh.acl.entity.User;
+import com.bh.entity.Role;
+import com.bh.entity.User;
 import com.bh.acl.service.IndexService;
 import com.bh.acl.service.PermissionService;
 import com.bh.acl.service.RoleService;

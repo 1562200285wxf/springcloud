@@ -1,6 +1,6 @@
 package com.bh.acl.service;
 
-import com.bh.acl.entity.Role;
+import com.bh.entity.Role;
 import com.baomidou.mybatisplus.extension.service.IService;
 
 import java.util.List;

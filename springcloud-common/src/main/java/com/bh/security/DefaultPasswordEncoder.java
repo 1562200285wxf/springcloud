@@ -1,6 +1,7 @@
 package com.bh.security;
 
 import com.bh.utils.MD5;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
 
@@ -8,12 +9,14 @@ import org.springframework.stereotype.Component;
  * 密码处理工具类
  */
 @Component
+@Slf4j
 public class DefaultPasswordEncoder implements PasswordEncoder {
     /**
      * 进行MD5加密
      */
     @Override
     public String encode(CharSequence rawPassword) {
+        log.info("加密前{}",rawPassword);
         return MD5.encrypt(rawPassword.toString());
     }
 
@@ -32,6 +35,8 @@ public class DefaultPasswordEncoder implements PasswordEncoder {
      */
     @Override
     public boolean matches(CharSequence rawPassword, String encodedPassword) {
+        log.info("密码对比rawPassword:{}----encodedPassword:{}",rawPassword,encodedPassword);
+        System.out.println("rawPassword----"+rawPassword+"-----encodedPassword--"+encodedPassword);
         return encodedPassword.equals(MD5.encrypt(rawPassword.toString()));
     }
 

@@ -2,9 +2,9 @@ package com.bh.acl.service.impl;
 
 import com.bh.acl.common.MemuHelper;
 import com.bh.acl.common.PermissionHelper;
-import com.bh.acl.entity.Permission;
-import com.bh.acl.entity.RolePermission;
-import com.bh.acl.entity.User;
+import com.bh.entity.Permission;
+import com.bh.entity.RolePermission;
+import com.bh.entity.User;
 import com.bh.acl.mapper.PermissionMapper;
 import com.bh.acl.service.PermissionService;
 import com.bh.acl.service.RolePermissionService;

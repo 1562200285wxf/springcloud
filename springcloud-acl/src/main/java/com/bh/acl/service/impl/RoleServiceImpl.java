@@ -1,7 +1,7 @@
 package com.bh.acl.service.impl;
 
-import com.bh.acl.entity.Role;
-import com.bh.acl.entity.UserRole;
+import com.bh.entity.Role;
+import com.bh.entity.UserRole;
 import com.bh.acl.mapper.RoleMapper;
 import com.bh.acl.service.RoleService;
 import com.bh.acl.service.UserRoleService;

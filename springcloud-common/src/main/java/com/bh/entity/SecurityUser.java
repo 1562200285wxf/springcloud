@@ -1,4 +1,4 @@
-package com.bh.acl.entity;
+package com.bh.entity;
 
 import lombok.Data;
 import org.springframework.security.core.GrantedAuthority;

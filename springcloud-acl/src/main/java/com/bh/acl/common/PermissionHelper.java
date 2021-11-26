@@ -1,6 +1,6 @@
 package com.bh.acl.common;
 
-import com.bh.acl.entity.Permission;
+import com.bh.entity.Permission;
 import org.apache.commons.lang3.StringUtils;
 
 import java.util.ArrayList;

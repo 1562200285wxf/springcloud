@@ -1,10 +1,11 @@
 package com.bh.acl.service.impl;
 
-import com.bh.acl.entity.User;
+import com.bh.entity.User;
 import com.bh.acl.service.PermissionService;
 import com.bh.acl.service.UserService;
-import com.bh.acl.entity.CurrentUserInfo;
-import com.bh.acl.entity.SecurityUser;
+import com.bh.entity.CurrentUserInfo;
+import com.bh.entity.SecurityUser;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -15,6 +16,7 @@ import javax.annotation.Resource;
 import java.util.List;
 
 @Service("userDetailsService")
+@Slf4j
 public class UserDetailsServiceImpl implements UserDetailsService {
 
     @Resource
@@ -38,9 +40,12 @@ public class UserDetailsServiceImpl implements UserDetailsService {
         if (user == null) {
             throw new UsernameNotFoundException("用户不存在");
         }
+
         CurrentUserInfo curUser = new CurrentUserInfo();
         BeanUtils.copyProperties(user, curUser);
 
+        log.info("--------------------user--load{}",user.toString());
+        System.out.println("user--load{}"+user.toString());
         //根据用户查询用户权限列表
         List<String> permissionValueList = permissionService.selectPermissionValueByUserId(user.getId());
 

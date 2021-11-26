@@ -1,7 +1,7 @@
 package com.bh.acl.controller;
 
 
-import com.bh.acl.entity.Permission;
+import com.bh.entity.Permission;
 import com.bh.acl.service.PermissionService;
 import com.bh.utils.R;
 import io.swagger.annotations.ApiOperation;

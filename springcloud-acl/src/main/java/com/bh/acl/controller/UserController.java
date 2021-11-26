@@ -1,7 +1,7 @@
 package com.bh.acl.controller;
 
 
-import com.bh.acl.entity.User;
+import com.bh.entity.User;
 import com.bh.acl.service.RoleService;
 import com.bh.acl.service.UserService;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
